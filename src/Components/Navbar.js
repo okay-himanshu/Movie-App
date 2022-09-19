@@ -7,7 +7,7 @@ import Search from "./Search";
 const Navbar = () => {
     const [toogle, setToogle] = useState(false);
 
-    function handleToogle (){
+    function handleToogle() {
         setToogle(!toogle)
     }
 
@@ -18,24 +18,26 @@ const Navbar = () => {
                     <div className="flex justify-center">
                         <img src={Logo} alt="logo" className="w-20 mr-3" />
                     </div>
-                    <div className={`absolute top-0 bg-red-100 w-full ${!toogle ? '-translate-y-40':'-translate-y-0'} sm:ml-5 sm:inline-block sm:relative sm:-translate-y-0 sm:bg-transparent`}>
-                        <ul className="flex flex-col items-center  sm:flex sm:flex-row sm:items-center sm:space-x-2 font-semibold text-sm">
-                            <li> <NavLink className="text-black sm:text-slate-300" to="/">Home</NavLink></li>
-                            <li> <NavLink className="text-black sm:text-slate-300" to="/services">Services</NavLink></li>
-                            <li>  <NavLink className="text-black sm:text-slate-300" to="/movies">Movies</NavLink></li>
+                    <div className={`absolute top-12 left-0 pt-5 pb-14 w-full bg-[#414040] bg-opacity-90  ${!toogle ? '-translate-y-52 transition-transform ' : 'translate-y-0  transition-transform '} sm:ml-5 sm:inline-block sm:relative sm:-translate-y-0 sm:bg-transparent sm:pb-0 sm:pt-0 sm:top-0`}>
+                        <ul className="flex flex-col items-center   sm:flex sm:flex-row sm:items-center  sm:space-x-2 font-semibold text-sm">
+                            <li> <NavLink className="text-white 
+                            sm:text-slate-300" to="/">Home</NavLink></li>
+                            <li> <NavLink className="text-white 
+                         sm:text-slate-300" to="/series">Series</NavLink></li>
+                            <li>  <NavLink className="text-white sm:text-slate-300" to="/movies">Movies</NavLink></li>
                         </ul>
                     </div>
                 </div>
-                <div className={`flex justify-center absolute right-0 ${!toogle ? '-translate-y-40' : '-translate-y-0'} sm:-translate-y-0`}>
+                <div className={`flex justify-center absolute top-0 ${!toogle ? '-translate-y-40  transition-transform  ' : 'translate-y-36  transition-transform duration-1000'} sm:translate-y-0 sm:relative`}>
                     <Search />
                 </div>
-                    <div className="text-white z-10 sm:hidden" onClick={handleToogle} >
-                       {
-                        !toogle?
-                        <span >&#9776;</span>
-                        :<span >&#x2715;</span>
-                       }
-                    </div>
+                <div className="text-white z-10 sm:hidden cursor-pointer" onClick={handleToogle} >
+                    {
+                        !toogle ?
+                            <span >&#9776;</span>
+                            : <span >&#x2715;</span>
+                    }
+                </div>
             </nav>
             <hr />
         </>

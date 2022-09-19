@@ -1,12 +1,4 @@
+import Home from "./Pages/Home";
 
-
-function App() {
-  return (
-    <>
-        App component
-        
-    </>
-  );
-}
-
-export default App;
+const App = () => <Home />
+export default App
