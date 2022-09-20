@@ -24,7 +24,7 @@ const Navbar = () => {
                             sm:text-slate-300" to="/">Home</NavLink></li>
                             <li> <NavLink className="text-white 
                          sm:text-slate-300" to="/series">Series</NavLink></li>
-                            <li>  <NavLink className="text-white sm:text-slate-300" to="/movies">Movies</NavLink></li>
+                            <li>  <NavLink className="text-white sm:text-slate-300" to="/movie">Movie</NavLink></li>
                         </ul>
                     </div>
                 </div>

@@ -4,8 +4,12 @@
 @tailwind components;
 @tailwind utilities;
 
+html{
+  overflow-x: hidden;
+}
+
 body{
-  font-family: system-ui;
+  font-family: poppins,system-ui;
   background: #222222;
 }
 
