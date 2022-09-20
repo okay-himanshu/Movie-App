@@ -7,8 +7,6 @@ export default function SingleMovie() {
     const [movieDetails, setMovieDetails] = useState('')
     const [loading,setLoading] = useState(false);
 
-
-
     const getData = async () => {
         setLoading(true)
         try {
