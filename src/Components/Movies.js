@@ -14,9 +14,9 @@ function Movies() {
   return (
     <>
       {isInvalidInput ? 
-        <p  className="text-center text-white">Invalid Input</p>
+        <p  className="text-center text-white">Nothing Found</p>
        : isNothingFound ? 
-        <p className="text-center text-white">nothing found</p>
+        <p className="text-center text-white">Input is null</p>
        : isLoading ? 
         <Spinner />
        : <>

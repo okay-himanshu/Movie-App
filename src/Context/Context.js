@@ -2,7 +2,7 @@
 import { useEffect, useState, useContext } from "react";
 import { createContext } from "react";
 
-export const AppContext = createContext();
+ const AppContext = createContext();
 
 const Context = ({ children }) => {
   const [isLoading, setIsLoading] = useState(false);
@@ -71,8 +71,9 @@ const Context = ({ children }) => {
   );
 };
 
-export const useGlobalContext = () => {
+const useGlobalContext = () => {
   return useContext(AppContext);
 };
 
 export default Context;
+export {useGlobalContext}
