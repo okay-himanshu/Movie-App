@@ -3,22 +3,26 @@ import { useEffect, useState, useContext } from "react";
 import { createContext } from "react";
 
 export const AppContext = createContext();
-
+ 
 const Context = ({ children }) => {
-  // const [isLoading,setIsLoading] = useState(false)
+  const [isLoading,setIsLoading] = useState(false)
   const [movies, setMovies] = useState([]);
   const [searchCount, setSearchCount] = useState(0);
   const [, setIsError] = useState({ show: "false", msg: "" });
   const [query, setQuery] = useState("batman");
 
   const getMovies = async () => {
+    setIsLoading(true);
     try {
       const req = await fetch(
         `http://www.omdbapi.com/?apikey=727bbdc1&s=${query}`
       );
       const res = await req.json();
       if (res.Response === "True") {
-        setMovies(res.Search);
+        setTimeout(()=>{
+          setMovies(res.Search);
+          setIsLoading(false);
+        },500)
       } else {
         setIsError({
           show: true,
@@ -38,7 +42,7 @@ const Context = ({ children }) => {
   }, [query]);
   return (
     <>
-      <AppContext.Provider value={{ movies, searchCount, query, setQuery }}>
+      <AppContext.Provider value={{ movies, searchCount, query, setQuery, isLoading }}>
         {children}
       </AppContext.Provider>
     </>
