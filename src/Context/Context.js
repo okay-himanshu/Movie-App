@@ -17,7 +17,7 @@ const Context = ({ children }) => {
     setIsLoading(true);
     try {
       const req = await fetch(
-        `http://www.omdbapi.com/?apikey=727bbdc1&s=${query}`
+        `https://www.omdbapi.com/?apikey=727bbdc1&s=${query}`
       );
       const res = await req.json();
       if (res.Response === "True") {
