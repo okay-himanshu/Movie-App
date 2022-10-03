@@ -10,7 +10,7 @@ export default function SingleMovie() {
     const getData = async () => {
         setLoading(true)
         try {
-            const req = await fetch(`http://www.omdbapi.com/?apikey=727bbdc1&i=${id}`);
+            const req = await fetch(`https://www.omdbapi.com/?apikey=727bbdc1&i=${id}`);
             const res = await req.json()
             console.log(res);
             setMovieDetails(res)
