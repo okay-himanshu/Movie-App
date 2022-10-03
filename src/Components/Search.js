@@ -10,7 +10,7 @@ const Search = () => {
                     <form onSubmit={(e) => e.preventDefault()}>
                         <input
                             type="text"
-                            className=" sm:w-52 md:w-72 lg:w-96  outline-none pt-[0.1rem] pb-[2px] rounded-sm pl-2 pr-16"
+                            className=" w-48 sm:w-52 md:w-72 lg:w-96  outline-none pt-[0.1rem] pb-[2px] rounded-sm pl-2 pr-16"
                             placeholder="search"
                             value={query}
                             onChange={(e) => { setQuery(e.target.value) }}
