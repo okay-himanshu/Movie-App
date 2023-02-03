@@ -2,7 +2,7 @@
 import { useEffect, useState, useContext } from "react";
 import { createContext } from "react";
 
- const AppContext = createContext();
+const AppContext = createContext();
 
 const Context = ({ children }) => {
   const [isLoading, setIsLoading] = useState(false);
@@ -37,7 +37,7 @@ const Context = ({ children }) => {
       if (query === "") {
         setIsNothingFound(true);
         setIsLoading(false);
-        setIsInvalidInput(false)
+        setIsInvalidInput(false);
       }
       setSearchCount(res.Search.length);
     } catch (error) {
@@ -45,13 +45,14 @@ const Context = ({ children }) => {
       setIsLoading(false);
     }
   };
-  
+
   useEffect(() => {
     const interval = setTimeout(() => {
       getMovies();
     }, 300);
+    // clean up function
     return () => clearTimeout(interval);
-  },[query]);
+  }, [query]);
   return (
     <>
       <AppContext.Provider
@@ -76,4 +77,4 @@ const useGlobalContext = () => {
 };
 
 export default Context;
-export {useGlobalContext}
+export { useGlobalContext };
